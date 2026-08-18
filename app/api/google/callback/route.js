@@ -14,10 +14,6 @@ export async function GET(request) {
 
   const { tokens } = await googleOAuth2Client.getToken(code);
 
-  console.log("NEW GOOGLE REFRESH TOKEN:", tokens.refresh_token);
-
-  googleOAuth2Client.setCredentials(tokens);
-
   googleOAuth2Client.setCredentials(tokens);
 
   const calendar = google.calendar({
